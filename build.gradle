@@ -1,0 +1,57 @@
+/**
+*   This file was generated automatically by the 'createModuleBuild' task.
+*   Created at: 2024-03-14T14:11:38.878568Z.
+*
+*   WARNING: Do not put your credentials directly in this file.
+*
+*/
+
+group          = "com.etendoerp"
+version        = "1.0.0"
+description    = "Demo module"
+ext.artifact   = "demo"
+ext.repository = "https://github.com/lucas-palacios/com.etendoerp.demo"
+
+configurations {
+    moduleDependencyContainer
+}
+
+publishing {
+    publications {
+        "com.etendoerp.demo"(MavenPublication) {
+            from components.java
+            groupId    = group
+            artifactId = artifact
+            version    = version
+        }
+    }
+    repositories {
+        maven {
+            url "https://github.com/lucas-palacios/com.etendoerp.demo"
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://github.com/lucas-palacios/com.etendoerp.demo"
+    }
+    maven {
+        url "https://repo.futit.cloud/repository/maven-releases"
+    }
+    maven {
+        url "https://repo.futit.cloud/repository/maven-public-releases"
+    }
+    maven {
+        url "https://repo.futit.cloud/repository/maven-public-jars"
+    }
+}
+
+/**
+* Declare Java dependencies using 'implementation'
+* Ex: implementation "com.sun.mail:javax.mail:1.6.2"
+*/
+dependencies {
+
+}
